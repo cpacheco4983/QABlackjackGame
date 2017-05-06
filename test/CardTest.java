@@ -39,6 +39,12 @@ public class CardTest {
     }
 
     @Test
+    public void equalsTest() {
+        Card c1 = new Card(1, Suit.HEARTS);
+        Assert.assertEquals(true, c.equals(c1));
+    }
+
+    @Test
     public void toStringTest() {
         Assert.assertEquals("Ace of HEARTS", c.toString());
     }

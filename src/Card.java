@@ -23,6 +23,18 @@ public class Card {
         this.suit = suit;
     }
 
+    @Override
+    public boolean equals(Object obj)
+    {
+        boolean same = true;
+        if(rank != ((Card)obj).getRank())
+            same = false;
+        else if (suit != ((Card)obj).getSuit())
+            same = false;
+
+        return same;
+    }
+
     public String toString() {
         switch (rank) {
             case 1: return "Ace of " + suit;
