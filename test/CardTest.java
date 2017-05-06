@@ -6,7 +6,7 @@ public class CardTest {
     private static Card c;
 
     @Before
-    public static void before() {
+    public void before() {
         c = new Card(1, Suit.HEARTS);//rank, suit
     }
 
