@@ -7,31 +7,40 @@ public class CardTest {
 
     @Before
     public static void before() {
-        c = new Card(1, 1);//rank, suit
+        c = new Card(1, Suit.HEARTS);//rank, suit
     }
 
-    @Test//correct values are input?
+    @Test
     public void cardTest() {
         Assert.assertEquals(1, c.getRank());
-        Assert.assertEquals(1, c.getSuit());
+        Assert.assertEquals(Suit.HEARTS, c.getSuit());
     }
 
+    @Test
     public void getRankTest() {
         Assert.assertEquals(1, c.getRank());
     }
 
+    @Test
     public void setRankTest() {
         c.setRank(2);
         Assert.assertEquals(2, c.getRank());
     }
 
+    @Test
     public void getSuitTest() {
-        Assert.assertEquals(1, c.getSuit());
+        Assert.assertEquals(Suit.HEARTS, c.getSuit());
     }
 
+    @Test
     public void setSuitTest() {
-        c.setSuit(2);
-        Assert.assertEquals(1, c.getSuit());
+        c.setSuit(Suit.DIAMONDS);
+        Assert.assertEquals(Suit.DIAMONDS, c.getSuit());
+    }
+
+    @Test
+    public void toStringTest() {
+        Assert.assertEquals("Ace of HEARTS", c.toString());
     }
 
 }
