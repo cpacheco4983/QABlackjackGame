@@ -18,9 +18,16 @@ public class DeckTest {
 
     @Test
     public void deckTest() {
-        Assert.assertEquals(c1, d.drawCard(0));
+        Assert.assertEquals(c1, d.drawCard(0));//expected, actual
         Assert.assertEquals(c2, d.drawCard(13));
         Assert.assertEquals(c3, d.drawCard(26));
         Assert.assertEquals(c4, d.drawCard(39));
+    }
+
+    @Test
+    public void shuffleDeckTest() {
+        Deck d1 = new Deck();
+        d1.shuffleDeck();
+        Assert.assertNotEquals(d.getDeck(), d1.getDeck());
     }
 }
