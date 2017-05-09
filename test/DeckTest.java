@@ -37,6 +37,5 @@ public class DeckTest {
         d.shuffleDeck();
         d1.shuffleDeck();
         Assert.assertNotEquals(d.getDeck(), d1.getDeck());
-
     }
 }
