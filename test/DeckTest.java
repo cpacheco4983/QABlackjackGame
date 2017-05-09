@@ -3,12 +3,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DeckTest {
-    Deck d;
+    Deck d, d1;
     Card c1, c2, c3, c4;
 
     @Before
     public void before() {
         d = new Deck();
+        d1 = new Deck();
         c1 = new Card(1, Suit.HEARTS);
         c2 = new Card(1, Suit.CLUBS);
         c3 = new Card(1, Suit.DIAMONDS);
@@ -29,5 +30,13 @@ public class DeckTest {
         Deck d1 = new Deck();
         d1.shuffleDeck();
         Assert.assertNotEquals(d.getDeck(), d1.getDeck());
+    }
+
+    @Test
+    public void shuffleDiffTest() {
+        d.shuffleDeck();
+        d1.shuffleDeck();
+        Assert.assertNotEquals(d.getDeck(), d1.getDeck());
+
     }
 }
