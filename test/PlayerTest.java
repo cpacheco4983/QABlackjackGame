@@ -12,7 +12,6 @@ public class PlayerTest {
         p1 = new Player("Carlos", 1000);
         c = new Card(1, Suit.HEARTS);
         c1 = new Card(1, Suit.SPADES);
-
     }
 
     @Test
@@ -65,6 +64,13 @@ public class PlayerTest {
         Assert.assertEquals(Suit.HEARTS, p.getHand(0).getSuit());
         Assert.assertEquals(1, p.getHand(1).getRank());
         Assert.assertEquals(Suit.SPADES, p.getHand(1).getSuit());
+    }
+
+    @Test
+    public void testHandValueTestMethod() {
+        p.addCard(c);
+        p.addCard(c1);
+        Assert.assertEquals(22, p.handValueTestMethod());
     }
 
     @Test
