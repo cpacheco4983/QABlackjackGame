@@ -43,17 +43,6 @@ public class PlayerTest {
     }
 
     @Test
-    public void setHandTest() {
-        p.addCard(c);
-        p.addCard(c1);
-        Assert.assertEquals(2, p.getHand().size());//expected, actual
-        Assert.assertEquals(1, p.getHand(0).getRank());
-        Assert.assertEquals(Suit.HEARTS, p.getHand(0).getSuit());
-        Assert.assertEquals(1, p.getHand(1).getRank());
-        Assert.assertEquals(Suit.SPADES, p.getHand(1).getSuit());
-    }
-
-    @Test
     public void noArgPlayerTest() {
         Assert.assertEquals("", p.getName());//expected, actual
         Assert.assertEquals(0, p.getMonies());
@@ -65,6 +54,21 @@ public class PlayerTest {
         Assert.assertEquals("Carlos", p1.getName());
         Assert.assertEquals(1000, p1.getMonies());
         Assert.assertEquals(0, p1.getHand().size());
+    }
 
+    @Test
+    public void addCardTest() {
+        p.addCard(c);
+        p.addCard(c1);
+        Assert.assertEquals(2, p.getHand().size());//expected, actual
+        Assert.assertEquals(1, p.getHand(0).getRank());
+        Assert.assertEquals(Suit.HEARTS, p.getHand(0).getSuit());
+        Assert.assertEquals(1, p.getHand(1).getRank());
+        Assert.assertEquals(Suit.SPADES, p.getHand(1).getSuit());
+    }
+
+    @Test
+    public void toStringTest() {
+        Assert.assertEquals("Name: Carlos\nMonies: 1000\nHand: []", p1.toString());
     }
 }

@@ -41,11 +41,12 @@ public class Player {
         return this.getHand().get(index);
     }
 
-    public void setHand(ArrayList<Card> hand) {
-        this.hand = hand;
-    }
-
     public void addCard(Card c) {
         hand.add(c);
+    }
+
+    public String toString() {
+        return "Name: " + name + "\nMonies: " + monies +
+                "\nHand: " + hand.toString();
     }
 }
